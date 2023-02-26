@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:7.0.8
+    container_name: firehose-ingress-gateway-redis
+    ports:
+      - "6379:6379"
