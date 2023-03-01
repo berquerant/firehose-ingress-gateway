@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/berquerant/firehose-proto v0.1.4
-	github.com/berquerant/firehose-test v0.1.0
+	github.com/berquerant/firehose-test v0.1.1
 	github.com/caarlos0/env/v7 v7.0.0
 	github.com/google/uuid v1.3.0
 	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0
