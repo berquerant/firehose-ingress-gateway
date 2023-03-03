@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"github.com/berquerant/firehose-ingress-gateway/pkg/redis"
-	"github.com/berquerant/firehose-ingress-gateway/pkg/runner"
 	"github.com/berquerant/firehose-ingress-gateway/server"
+	"github.com/berquerant/firehose-proto/envx"
 	goredis "github.com/redis/go-redis/v9"
 )
 
@@ -26,7 +26,7 @@ type config struct {
 func main() {
 	var cfg config
 
-	if err := runner.New(cfg).Run(context.Background(), run); err != nil {
+	if err := envx.NewRunner(cfg).Run(run); err != nil {
 		panic(err)
 	}
 }
