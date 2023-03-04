@@ -18,7 +18,11 @@ import (
 func TestRun(t *testing.T) {
 	const (
 		redisQueueKey = "figr-test"
+		serverPort    = 20002
 	)
+
+	os.Setenv("REDIS_QUEUE_KEY", redisQueueKey)
+
 	var (
 		rdb        = goredis.NewClient(&goredis.Options{})
 		cleanRedis = func() error {
@@ -57,8 +61,11 @@ func TestRun(t *testing.T) {
 	dir := tempdir.New("firehose-ingress-gateway-redis")
 	defer dir.Close()
 
-	os.Setenv("REDIS_QUEUE_KEY", redisQueueKey)
-	runner := grpctest.NewRunner(dir, grpctest.WithHealthWait(3*time.Second))
+	runner := grpctest.NewRunner(
+		dir,
+		grpctest.WithHealthWait(3*time.Second),
+		grpctest.WithPort(serverPort),
+	)
 	defer runner.Close()
 	assert.Nil(t, runner.Init(context.TODO()))
 
