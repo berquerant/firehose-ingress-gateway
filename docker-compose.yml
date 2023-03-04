@@ -1,6 +1,15 @@
 version: '3'
 
 services:
+  rabbitmq:
+    image: rabbitmq:3.11.9-management
+    container_name: firehose-ingress-gateway-rabbitmq
+    ports:
+      - "15672:15672" # management plugin
+      - "5672:5672"
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: pass
   redis:
     image: redis:7.0.8
     container_name: firehose-ingress-gateway-redis
