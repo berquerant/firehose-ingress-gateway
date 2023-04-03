@@ -7,7 +7,7 @@ require (
 	github.com/berquerant/firehose-test v0.1.2
 	github.com/google/uuid v1.3.0
 	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0
-	github.com/redis/go-redis/v9 v9.0.2
+	github.com/redis/go-redis/v9 v9.0.3
 	github.com/streadway/amqp v1.0.0
 	github.com/stretchr/testify v1.8.2
 	google.golang.org/grpc v1.53.0
