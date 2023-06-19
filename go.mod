@@ -8,7 +8,7 @@ require (
 	github.com/google/uuid v1.3.0
 	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0
 	github.com/redis/go-redis/v9 v9.0.5
-	github.com/streadway/amqp v1.0.0
+	github.com/streadway/amqp v1.1.0
 	github.com/stretchr/testify v1.8.4
 	google.golang.org/grpc v1.53.0
 )
